@@ -84,6 +84,114 @@ class ArrayList : public List {
             for (int i = 0; i < index; i++) {
                 cout << array[i] << " ";
             }
+            if (index == 0){
+                cout << "The list is empty." << endl;
+            }
             cout << endl;
         };
+
+        // Section 1;
+        bool isEmpty(){
+            if (index == 0){
+                return true;
+            }
+            return false;
+        };
+
+        bool contains(int num){
+            for (int i=0; i<index; i++){
+                if (array[i] == num){
+                    return true;
+                    break;
+                }
+            }
+                return false;
+        };
+
+        int find(int num){
+            for (int i=0; i<index; i++){
+                if (array[i] == num){
+                    return i+1;
+                    break;
+                }
+            }
+
+            return -1;
+        };
+
+        int removeLast(){
+            return index--;
+        }
+
+        int removeFirst(){
+            int first = array[0];
+            removeAt(0);
+            return first;
+        }
+
+        int removeAll(){
+            int i=0;
+            while (i<index){
+                removeAt(i);
+            } i++;
+
+            return 0;
+        }
+
+        // Section 2
+        int term(int num){
+            for (int i=0; i<index; i++){
+                array[i] = num + array[i];
+            }
+
+            return 0;
+        }
+
+        int summation(int sum){
+            sum = 0;
+            for (int i=0; i<index; i++){
+                sum += array[i];
+            }
+            return sum;
+        }
+
+        // Section 3;
+        int removeDuplicates(int num){
+            int ctr = 0;
+
+            for (int i=0; i<index; i++){
+                if (array[i] == num){
+                    ctr++; 
+                } 
+                
+                if (ctr > 1){
+                    removeAt(i);
+                } else {
+                    cout << "No duplicates found." << endl;
+                }
+            }
+
+            return 0;
+        }
+
+        // [1,2,3] to [3,1,2]
+
+        int shiftRight(int k){
+
+            if (k > index){
+                k = k % index;
+            }
+
+            for (int i=0; i<k; i++){
+                int last = array[index-1];
+                for (int j=index-1; j>0; j--){
+                    array[j] = array[j-1];
+                }
+                array[0] = last;
+            }
+
+            return 0;
+        }
+
+        // insert int shiftLeft here
 };
