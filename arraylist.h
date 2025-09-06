@@ -194,4 +194,20 @@ class ArrayList : public List {
         }
 
         // insert int shiftLeft here
+        int shiftLeft(int k){
+
+            if(k > index){
+                k = k % index;
+            }
+
+            for (int i=0; i<k; i++){
+                int first = array[0];
+                for (int j=0; j<index - 1 ; j++){
+                    array[j] = array[j+1];
+                }
+                array[index-1] = first;
+            }
+
+            return 0;
+        }
 };

@@ -134,6 +134,13 @@ int main() {
                 list->print();
                 break;
 
+            case 'o':
+                cout << "Enter value: ";
+                cin >> num;
+                list->shiftLeft(num);
+                list->print();
+                break;    
+
             default:
                 
                 break;
