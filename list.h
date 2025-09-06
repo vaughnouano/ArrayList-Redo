@@ -20,5 +20,5 @@ class List {
         // Section 3
         virtual int removeDuplicates(int num) = 0;
         virtual int shiftRight(int k) = 0;
-        // virtual int shiftLeft(int k) = 0;
+        virtual int shiftLeft(int k) = 0;
 };
